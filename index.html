@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D汉诺塔游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="title">3D 汉诺塔</h1>
+        
+        <!-- 控制面板 -->
+        <div class="control-panel">
+            <div class="disk-control">
+                <label>圆盘数量：</label>
+                <input type="range" id="diskCount" min="3" max="8" value="5">
+                <span id="diskCountText">5</span>
+            </div>
+            <button id="resetBtn">重置游戏</button>
+            <button id="autoSolveBtn">自动解题</button>
+            <div class="step-count">步数：<span id="steps">0</span></div>
+        </div>
+
+        <!-- 游戏提示 -->
+        <div id="hint" class="hint"></div>
+
+        <!-- 3D汉诺塔主体 -->
+        <div class="hanoi-container">
+            <div class="peg" data-peg="0"></div>
+            <div class="peg" data-peg="1"></div>
+            <div class="peg" data-peg="2"></div>
+        </div>
+
+        <!-- 胜利弹窗 -->
+        <div id="winModal" class="modal hidden">
+            <div class="modal-content">
+                <h2>🎉 恭喜通关！</h2>
+                <p>总步数：<span id="winSteps">0</span></p>
+                <button id="closeWinBtn">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
